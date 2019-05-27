@@ -1,25 +1,25 @@
 package com.company;
-import java.util.Scanner; // импорт сканера
+import java.util.Scanner;
 
 public class Rhombus {
 
     static Scanner scan = new Scanner(System.in);
 
-    int getNumbAsterisk() {//валидатор ввода данных
+    int getNumbAsterisk() {
         int num;
         if (scan.hasNextInt()) {
             num = scan.nextInt();
         } else {
             System.out.println("Вы допустили ошибку при вводе числа. Попробуйте еще раз.");
             scan.next();
-            num = getNumbAsterisk();//рекурсия
+            num = getNumbAsterisk();
         }
         return num;
     }
 
     void getOutput(int NumbAsterisk) {
 
-        for (int i = 0; i <= NumbAsterisk; i = i + 2) {//верх ромба, i - номер строки
+        for (int i = 0; i <= NumbAsterisk; i = i + 2) {//верх ромба,
 
             for (int putSpace = 0; putSpace < NumbAsterisk/2 - i/2 + NumbAsterisk%2; putSpace++)
                 System.out.print(" ");
@@ -31,7 +31,7 @@ public class Rhombus {
 
         }
 
-        for (int i = 0; i <= NumbAsterisk; i = i + 2) {//низ ромба, i - номер строки
+        for (int i = 0; i <= NumbAsterisk; i = i + 2) {//низ ромба
 
             for (int putSpace = 0; putSpace < i / 2; putSpace++)
                 System.out.print(" ");
